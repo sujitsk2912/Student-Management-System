@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47A6CEF0-4CBF-49AD-809F-B84A532C6EDD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Attendance_management_system</RootNamespace>
+    <AssemblyName>Attendance management system</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>D:\_Getintopc.com_Bunifu_UI_WinForms_5.0.3\packages\Bunifu.UI.WinForms.5.0.3\lib\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrator_Name.cs" />
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="frmactcreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmactcreate.Designer.cs">
+      <DependentUpon>frmactcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmadmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadmission.Designer.cs">
+      <DependentUpon>frmadmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendanceMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttendanceMonth.Designer.cs">
+      <DependentUpon>frmAttendanceMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendanceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttendanceRecord.Designer.cs">
+      <DependentUpon>frmAttendanceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmissionRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmissionRecord.Designer.cs">
+      <DependentUpon>frmAdmissionRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmanimated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmanimated.Designer.cs">
+      <DependentUpon>frmanimated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmattendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmattendance.Designer.cs">
+      <DependentUpon>frmattendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmdashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmdashboard.Designer.cs">
+      <DependentUpon>frmdashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmedit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmedit.Designer.cs">
+      <DependentUpon>frmedit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmeditadmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeditadmission.Designer.cs">
+      <DependentUpon>frmeditadmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmerror.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmerror.Designer.cs">
+      <DependentUpon>frmerror.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmfaculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmfaculty.Designer.cs">
+      <DependentUpon>frmfaculty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacultyMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacultyMain.Designer.cs">
+      <DependentUpon>frmFacultyMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForget.Designer.cs">
+      <DependentUpon>frmForget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frminvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frminvoice.Designer.cs">
+      <DependentUpon>frminvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmloginsuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmloginsuccess.Designer.cs">
+      <DependentUpon>frmloginsuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnewlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnewlogin.Designer.cs">
+      <DependentUpon>frmnewlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmnewsignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnewsignup.Designer.cs">
+      <DependentUpon>frmnewsignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmresults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmresults.Designer.cs">
+      <DependentUpon>frmresults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSignup.Designer.cs">
+      <DependentUpon>frmSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmstudent.Designer.cs">
+      <DependentUpon>frmstudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentAttendance.Designer.cs">
+      <DependentUpon>frmStudentAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmstudentHelpers.cs" />
+    <Compile Include="frmStudentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentMain.Designer.cs">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmstudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmstudents.Designer.cs">
+      <DependentUpon>frmstudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MethodClass.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staff_Name.cs" />
+    <Compile Include="Student_Name.cs" />
+    <Compile Include="successfulPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="successfulPage.Designer.cs">
+      <DependentUpon>successfulPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sujitdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sujitdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sujitdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sujitdbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sujitdbDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sujitdbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <None Include="Resources\student %281%29.png" />
+    <None Include="Resources\warning2.png" />
+    <None Include="Resources\graduation-cap.png" />
+    <None Include="Resources\graduated.png" />
+    <None Include="Resources\bookmark-star-solid-24.png" />
+    <None Include="Resources\arrow-to-top-regular-24.png" />
+    <None Include="Resources\minimize %281%29.png" />
+    <None Include="Resources\close %281%29.png" />
+    <None Include="Resources\x-regular-24 %282%29.png" />
+    <None Include="Resources\email %281%291.png" />
+    <None Include="Resources\email %281%29.png" />
+    <None Include="Resources\user %285%291.png" />
+    <None Include="Resources\padlock %284%291.png" />
+    <None Include="Resources\hidden1.png" />
+    <None Include="Resources\view %281%291.png" />
+    <None Include="Resources\facebook %283%291.png" />
+    <None Include="Resources\twitter %281%292.png" />
+    <None Include="Resources\search %283%291.png" />
+    <None Include="Resources\attachment %282%292.png" />
+    <None Include="Resources\attachment %282%291.png" />
+    <None Include="Resources\padlock %284%29.png" />
+    <None Include="Resources\user %285%29.png" />
+    <None Include="Resources\view %281%29.png" />
+    <None Include="Resources\hidden.png" />
+    <None Include="Resources\facebook %283%29.png" />
+    <None Include="Resources\twitter %281%291.png" />
+    <None Include="Resources\twitter %281%29.png" />
+    <None Include="Resources\search %283%29.png" />
+    <None Include="Resources\attachment %282%29.png" />
+    <None Include="Resources\log-out-circle-solid-24 %281%29.png" />
+    <None Include="Resources\book-solid-24.png" />
+    <None Include="Resources\list-ol-regular-24.png" />
+    <None Include="Resources\book-reader-solid-24.png" />
+    <None Include="Resources\detail-regular-24.png" />
+    <None Include="Resources\group-solid-24.png" />
+    <None Include="Resources\user-solid-24 %281%29.png" />
+    <None Include="Resources\dashboard-solid-24 %281%29.png" />
+    <None Include="Resources\exit %281%291.png" />
+    <None Include="Resources\exit %281%29.png" />
+    <None Include="Resources\search %281%29.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\loading-arrow.png" />
+    <None Include="Resources\refresh-page-option.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\letter.png" />
+    <None Include="Resources\student.png" />
+    <None Include="Resources\student-with-graduation-cap.png" />
+    <None Include="Resources\user %283%291.png" />
+    <None Include="Resources\user %284%29.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\search_7079548.png" />
+    <None Include="Resources\clipboard_100572281.png" />
+    <None Include="Resources\search_3281188.png" />
+    <None Include="Resources\search_3281329.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\user %283%29.png" />
+    <None Include="Resources\rec_10260814.png" />
+    <None Include="Resources\rec_10260887.png" />
+    <None Include="Resources\rec_10435062.png" />
+    <None Include="Resources\Thin fading line.gif" />
+    <None Include="Resources\clipboard_10057228.png" />
+    <None Include="Resources\resume_7039300.png" />
+    <None Include="Resources\evaluation_8594302.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\google-docs_2991108.png" />
+    <None Include="Resources\edit %284%29.png" />
+    <None Include="Resources\edit %283%29.png" />
+    <None Include="Resources\edit %282%29.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\edit %281%29.png" />
+    <None Include="Resources\circle-of-two-clockwise-arrows-rotation.png" />
+    <None Include="Resources\reset.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\Table with Search Bar and Filters1.png" />
+    <None Include="Resources\user-rectangle-solid-241.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\attachment %281%29.png" />
+    <None Include="Resources\folder %281%29.png" />
+    <None Include="Resources\Table with Search Bar and Filters.png" />
+    <None Include="Resources\user-rectangle-solid-24.png" />
+    <EmbeddedResource Include="frmactcreate.resx">
+      <DependentUpon>frmactcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmadmission.resx">
+      <DependentUpon>frmadmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttendanceMonth.resx">
+      <DependentUpon>frmAttendanceMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttendanceRecord.resx">
+      <DependentUpon>frmAttendanceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmissionRecord.resx">
+      <DependentUpon>frmAdmissionRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmanimated.resx">
+      <DependentUpon>frmanimated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmattendance.resx">
+      <DependentUpon>frmattendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmdashboard.resx">
+      <DependentUpon>frmdashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmedit.resx">
+      <DependentUpon>frmedit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmeditadmission.resx">
+      <DependentUpon>frmeditadmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmerror.resx">
+      <DependentUpon>frmerror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmfaculty.resx">
+      <DependentUpon>frmfaculty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacultyMain.resx">
+      <DependentUpon>frmFacultyMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForget.resx">
+      <DependentUpon>frmForget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frminvoice.resx">
+      <DependentUpon>frminvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmloginsuccess.resx">
+      <DependentUpon>frmloginsuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnewlogin.resx">
+      <DependentUpon>frmnewlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnewsignup.resx">
+      <DependentUpon>frmnewsignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmresults.resx">
+      <DependentUpon>frmresults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSignup.resx">
+      <DependentUpon>frmSignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmstudent.resx">
+      <DependentUpon>frmstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentAttendance.resx">
+      <DependentUpon>frmStudentAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentMain.resx">
+      <DependentUpon>frmStudentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmstudents.resx">
+      <DependentUpon>frmstudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="successfulPage.resx">
+      <DependentUpon>successfulPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="sujitdbDataSet.xsc">
+      <DependentUpon>sujitdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sujitdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sujitdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sujitdbDataSet.xss">
+      <DependentUpon>sujitdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sujitdbDataSet1.xsc">
+      <DependentUpon>sujitdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sujitdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sujitdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sujitdbDataSet1.xss">
+      <DependentUpon>sujitdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sujitdbDataSet2.xsc">
+      <DependentUpon>sujitdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sujitdbDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sujitdbDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sujitdbDataSet2.xss">
+      <DependentUpon>sujitdbDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-ul-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-bookmark-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycle-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4-9-2021--6-06-37-am-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statisctics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cropped-MK-Placement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-alt-2-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevrons_9678557.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_6909625.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
